@@ -34,4 +34,21 @@ prevent_deletion_if_contains_resources is an AzureRM provider setting that prote
 prevent_destroy = true is a Terraform lifecycle rule that prevents Terraform from destroying a particular resource while that rule remains in the configuration.
 Key Takeaway
 
+
+
+
+
+
+SSH key authentication
+
+bash
+ssh -i ~/.ssh/id_ed25519 azureuser@<VM_IP>
+Uses a private key that matches the public key configured on the VM.
+
+Password authentication
+
+bash
+ssh azureuser@<VM_IP>
+Prompts for a password only if SSH password authentication is enabled and a valid password is configured.
+
 The empty features {} block satisfies the AzureRM provider's configuration requirement. Adding settings inside it allows us to customize specific resource-management behaviors.
